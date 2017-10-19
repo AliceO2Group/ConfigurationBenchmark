@@ -1,0 +1,10 @@
+{
+  "InfluxDB":
+  {
+    "hostname": "aido2mon-gpn",
+    "enableUDP": 0,
+    "enableHTTP": 1,
+    "port": 8086,
+    "db": "o2_config_bench"
+  }
+}

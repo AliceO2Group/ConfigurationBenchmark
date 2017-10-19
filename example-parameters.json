@@ -1,0 +1,10 @@
+{
+  "parameters":
+  {
+    "uri": "etcd://aido2cnf01:2379/pboescho/test",
+    "mon-uri": "consul://aido2cnf01:8500/pboescho/conf-bench/monitoring/",
+    "n-processes": 1,
+    "n-parameters": 100,
+    "structure": "tree"
+  }
+}
