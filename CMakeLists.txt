@@ -83,7 +83,6 @@ O2_GENERATE_EXECUTABLE(
         BUCKET_NAME ${BUCKET_NAME}
 )
 
-add_subdirectory(doc)
 
 # RPM generation
 SET(CPACK_GENERATOR "RPM")
