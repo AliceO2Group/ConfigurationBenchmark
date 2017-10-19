@@ -571,8 +571,8 @@ void doGet(const Options& options, ParameterHandler& parameterHandler) {
     };
 
     auto& monitoring = Monitoring::MonitoringFactory::Get();
-    monitoring.sendTagged<int64_t>(start, "time", std::vector<Monitoring::Tag>(tags));
-    monitoring.sendTagged<int64_t>(end, "time", std::vector<Monitoring::Tag>(tags));
+    monitoring.sendTagged<uint64_t>(start, "time", std::vector<Monitoring::Tag>(tags));
+    monitoring.sendTagged<uint64_t>(end, "time", std::vector<Monitoring::Tag>(tags));
   }
   catch (const std::exception& e) {
     throw std::runtime_error(std::string("Failed to send monitoring data - ") + e.what());
@@ -624,4 +624,3 @@ int main(int argc, char** argv)
     return 1;
   }
 }
-
