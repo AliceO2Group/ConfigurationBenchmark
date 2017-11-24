@@ -180,12 +180,12 @@ void waitUntilNextInterval()
 
 std::string flatParameterPath(int nParameters)
 {
-  return "/test/flat" + boost::lexical_cast<std::string>(nParameters);
+  return "/flat" + boost::lexical_cast<std::string>(nParameters);
 }
 
 std::string treeParameterPath(int nParameters)
 {
-  return "/test/tree" + boost::lexical_cast<std::string>(nParameters);
+  return "/tree" + boost::lexical_cast<std::string>(nParameters);
 }
 
 std::string makeValue(int number)
@@ -230,11 +230,11 @@ int checkReturnedParameters(ParameterMap& generatedMap, ParameterMap& returnedMa
 /// Creates a list of parameters and values
 ///
 /// The test keys and values are:
-/// /test/key[0...nParams - 1] -> [0...nParams - 1]
+/// /key[0...nParams - 1] -> [0...nParams - 1]
 ParameterMap createParameterMapSeparate(int nParams)
 {
   ParameterMap parameterMap;
-  std::string keyPrefix = "/test/separate/key";
+  std::string keyPrefix = "/separate/key";
   int pathMin = 0;
   int pathMax = nParams - 1;
 
@@ -256,7 +256,7 @@ ParameterMap createParameterMapCombined(int nParams)
     stringstream << "key" << i << "=value" << std::setw(95) << std::setfill('0') << i << '|';
   }
 
-  parameterMap.emplace("/test/combined/key" + boost::lexical_cast<std::string>(nParams), stringstream.str());
+  parameterMap.emplace("/combined/key" + boost::lexical_cast<std::string>(nParams), stringstream.str());
   return parameterMap;
 }
 

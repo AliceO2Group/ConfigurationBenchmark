@@ -37,8 +37,8 @@ ansible-playbook -i inventory/configuration-benchmark-client -t configuration-be
 First put the configuration parameters into the server using the --put option.
 ~~~
 configuration-benchmark \
-  --uri='etcd://my_server:2379/my_dir/test' \
-  --params=10 \
+  --server-uri='etcd://my_server:2379/my_dir/test' \
+  --n-parameters=10 \
   --structure=tree \
   --put
 ~~~
@@ -46,7 +46,7 @@ configuration-benchmark \
 Then execute the benchmark using the same configuration parameters and structure
 ~~~
 configuration-benchmark \
-  --uri='etcd://my_server:2379/my_dir/test' \
+  --server-uri='etcd://my_server:2379/my_dir/test' \
   --mon-uri='consul://my_server:8500/my_dir/conf-bench/monitoring/' \
   --n-processes=10 \
   --n-parameters=10 \
