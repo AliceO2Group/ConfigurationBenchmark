@@ -1,0 +1,159 @@
+{
+  "conf-bench":
+  {
+    "README": "Base directory for Configuration Benchmark related data",
+    "setups":
+    {
+      "README": "These directories are to be given to configuration-benchmark using the --args-uri option",
+      "0":
+      {
+        "args":
+        {
+          "server-uri": "consul://localhost:8500/conf-bench/data/",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/0/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "separate"
+        },
+        "monitoring": { "InfluxDB": { "port": 8090, "hostname": "mymonserver", "enableUDP": 1 } }
+      },
+      "1":
+      {
+        "args":
+        {
+          "server-uri": "consul://localhost:8500/conf-bench/data/",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/1/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "combined"
+        },
+        "monitoring": { "InfluxDB": { "port": 8091, "hostname": "mymonserver", "enableUDP": 1 } }
+      },
+      "2":
+      {
+        "args":
+        {
+          "server-uri": "consul://localhost:8500/conf-bench/data/",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/2/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "flat"
+        },
+        "monitoring": { "InfluxDB": { "port": 8092, "hostname": "mymonserver", "enableUDP": 1 } }
+      },
+      "3":
+      {
+        "args":
+        {
+          "server-uri": "consul://localhost:8500/conf-bench/data/",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/3/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "tree"
+        },
+        "monitoring": { "InfluxDB": { "port": 8093, "hostname": "mymonserver", "enableUDP": 1 } }
+      },
+      "4":
+      {
+        "args":
+        {
+          "server-uri": "etcd://localhost:2379/conf-bench/data/",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/4/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "separate"
+        },
+        "monitoring": { "InfluxDB": { "port": 8094, "hostname": "mymonserver", "enableUDP": 1 } }
+      },
+      "5":
+      {
+        "args":
+        {
+          "server-uri": "etcd://localhost:2379/conf-bench/data/",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/5/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "combined"
+        },
+        "monitoring": { "InfluxDB": { "port": 8095, "hostname": "mymonserver", "enableUDP": 1 } }
+
+      },
+      "6":
+      {
+        "args":
+        {
+          "server-uri": "etcd://localhost:2379/conf-bench/data/",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/6/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "flat"
+        },
+        "monitoring": { "InfluxDB": { "port": 8096, "hostname": "mymonserver", "enableUDP": 1 } }
+
+      },
+      "7":
+      {
+        "args":
+        {
+          "server-uri": "etcd://localhost:2379/conf-bench/data/",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/7/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "tree"
+        },
+        "monitoring": { "InfluxDB": { "port": 8097, "hostname": "mymonserver", "enableUDP": 1 } }
+      },
+      "8":
+      {
+        "args":
+        {
+          "server-uri": "mysql://myserver1/conf-bench/data,mysql://myserver2/conf-bench/data,mysql://myserver3/conf-bench/data",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/8/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "separate"
+        },
+        "monitoring": { "InfluxDB": { "port": 8098, "hostname": "mymonserver", "enableUDP": 1 } }
+      },
+      "9":
+      {
+        "args":
+        {
+          "server-uri": "mysql://myserver1/conf-bench/data,mysql://myserver2/conf-bench/data,mysql://myserver3/conf-bench/data",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/9/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "combined"
+        },
+        "monitoring": { "InfluxDB": { "port": 8099, "hostname": "mymonserver", "enableUDP": 1 } }
+      },
+      "10":
+      {
+        "args":
+        {
+          "server-uri": "mysql://myserver1/conf-bench/data,mysql://myserver2/conf-bench/data,mysql://myserver3/conf-bench/data",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/10/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "flat"
+        },
+        "monitoring": { "InfluxDB": { "port": 8100, "hostname": "mymonserver", "enableUDP": 1 } }
+      },
+      "11":
+      {
+        "args":
+        {
+          "server-uri": "mysql://myserver1/conf-bench/data,mysql://myserver2/conf-bench/data,mysql://myserver3/conf-bench/data",
+          "mon-uri": "consul://localhost:8500/conf-bench/setups/11/monitoring/",
+          "n-processes": 100,
+          "n-parameters": 100,
+          "structure": "tree"
+        },
+        "monitoring": { "InfluxDB": { "port": 8101, "hostname": "mymonserver", "enableUDP": 1 } }
+      }
+    },
+    "data": {
+      "README": "This directory is for the benchmark test data. Fill using configuration-benchmark --put option"
+    }
+  }
+}

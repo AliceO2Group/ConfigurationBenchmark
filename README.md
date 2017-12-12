@@ -63,6 +63,37 @@ This example assumes you are using the system-configuration repo for the invento
 ansible configuration-benchmark-client -u root -i inventory -m command -a 'bash -c "env -u http_proxy LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/o2-dependencies/lib:/opt/o2-modules/lib nohup configuration-benchmark --args-uri=consul://my_server:8500/pboescho/conf-bench/bench_0/arguments/ &"'
 ~~~
 
+Using the `--args-uri` option, it's also possible to use a configuration source to supply the command line arguments.
+For example:
+~~~
+configuration-benchmark --args-uri=consul://localhost:8500/my-dir/conf-bench/bench_0/arguments/
+~~~
+The benchmark will take all key-values in the given directory and interpret them exactly as the command-line options.
+Additional arguments may still be given on the command-line.
+
+
+# Example suite usage
+This suite is meant to be used with the internal benchmark setup deployed with Ansible. 
+
+(1) First modify the `example-bench-suite.json` file to correspond to your server/client setup.
+It contains a list of benchmark "setups" referred to by an index number. 
+These can be iterated through by the `example-bench-script.sh`.
+
+(2) Copy it to e.g. a Consul server
+~~~
+configuration-copy \
+  --source=json://my_local_dir/configuration-benchmark/example-bench-suite.json \
+  --dest=consul://my_server:8500/
+~~~
+
+(3) Adjust parameters in the script if needed, and run it
+~~~
+cd /my/ansible/dir/
+bash example-bench-script.sh
+~~~
+
+The script will iterate through the setups, executing a benchmark every minute.
+ 
 
 # Notes
 It's preferable to use IP addresses in the URIs instead of hostnames.
